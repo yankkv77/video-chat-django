@@ -1,0 +1,275 @@
+:root {
+    --shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+body {
+    background-color: #f8fafd;
+    font-family: "Ibarra Real Nova", serif;
+}
+
+/* Header */
+
+#navbar-brand {
+    width: 2rem;
+    padding-left: 3rem;
+}
+
+.nav {
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+
+.nav > .nav-header {
+    display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 20px;
+    color: #000000;
+    padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+    display: none;
+}
+
+.nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 17.5px;
+    padding-right: 3rem;
+}
+
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav > .nav-links > a:hover {
+    color: rgb(188, 115, 253);
+}
+
+.nav > #nav-check {
+    display: none;
+}
+
+@media (max-width: 450px) {
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        background-color: #f8fafd;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 10000;
+        text-align: center;
+    }
+
+    .nav > .nav-btn > .nav-btn > .nav-check {
+        background-color: red;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+
+/*  */
+
+/* Start page */
+
+#logo {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+}
+
+#form-container {
+    width: 400px;
+    box-shadow: var(--shadow);
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#start-text {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#start-text h1 {
+    font-size: 35px;
+}
+#start-text p {
+    font-size: 17.5px;
+}
+
+.form-field {
+    margin: 1rem;
+    box-shadow: rgba(189, 115, 253, 0.246) 0px 3px 10px 0px;
+    background-color: rgba(189, 115, 253, 0.246);
+    border-radius: 10px;
+}
+
+.form-field input[type="submit"] {
+    background-color: rgba(184, 184, 184, 0.65);
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    box-shadow: none;
+}
+.form-field input[type="submit"]:hover {
+    background-color: rgba(189, 115, 253, 0.611);
+    color: #ffffff;
+}
+
+.form-field input {
+    width: 100%;
+    border: 2px solid rgba(189, 115, 253, 0.611);
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 450px) {
+    #form-container {
+        width: 95%;
+    }
+    #start-text h1 {
+        font-size: 20px;
+    }
+}
+
+/*  */
+
+/* Room */
+#video-streams {
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.video-container {
+    border: 1px solid rgba(189, 115, 253, 0.611);
+    border-radius: 5px;
+    margin: 2px;
+    background-color: rgb(0, 0, 0);
+    flex-basis: 400px;
+    flex-grow: 1;
+    max-height: 100%;
+    min-height: 350px;
+    position: relative;
+}
+
+.video-player {
+    height: 100%;
+    width: 100%;
+}
+
+.video-player > * {
+    border-radius: 4px;
+}
+
+#room-name-wrapper {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.username-wrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    background-color: rgba(225, 192, 255, 0.259);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+    .video-container {
+        flex-basis: 325px;
+        min-height: 200px;
+    }
+}
+
+/*  */
+
+/* Control buttons */
+
+.control-icon {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#control-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    column-gap: 1rem;
+    position: fixed;
+    bottom: 20px;
+}
+
+#leave-button:hover {
+    background-color: rgb(255, 51, 63);
+}
+
+#microphone-button:hover {
+    background-color: rgb(255, 51, 63);
+}
+
+#video-button:hover {
+    background-color: rgb(255, 51, 63);
+}
+
+/*  */
